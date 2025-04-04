@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpacyFire | Cutting-Edge Tech Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            DEFAULT: '#39FF14',
+                            light: '#6AFF52',
+                            dark: '#00CC00'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+        h1, h2, h3, h4, nav {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            border-color: #39FF14;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
+        }
+        .glow-border {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-black py-4 sticky top-0 z-50 border-b border-neon">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-fire text-neon text-2xl"></i>
+                    <span class="text-neon text-2xl font-bold">SPACYFIRE</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-neon hover:text-neon-light transition">HOME</a>
+                    <a href="#services" class="text-gray-300 hover:text-neon transition">SERVICES</a>
+                    <a href="#about" class="text-gray-300 hover:text-neon transition">ABOUT</a>
+                    <a href="#contact" class="text-gray-300 hover:text-neon transition">CONTACT</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-neon focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero py-32 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 glow-text">IGNITE YOUR DIGITAL FUTURE</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">We deliver <span class="text-neon font-bold">cutting-edge</span> technology solutions with <span class="text-neon font-bold">unmatched</span> performance</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#services" class="bg-neon hover:bg-neon-dark text-black font-bold py-3 px-8 rounded-full transition duration-300 glow-border">OUR SERVICES</a>
+                <a href="#contact" class="border-2 border-neon hover:bg-neon hover:text-black text-neon font-bold py-3 px-8 rounded-full transition duration-300">CONTACT US</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 text-neon">OUR SERVICES</h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">We provide comprehensive technology solutions to power your business in the digital age</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-8 rounded-lg">
+                    <div class="text-neon text-4xl mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
+                    <p class="text-gray-300">High-performance websites built with modern frameworks and optimized for speed and SEO.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card p-8 rounded-lg">
+                    <div class="text-neon text-4xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">App Development</h3>
+                    <p class="text-gray-300">Native and cross-platform mobile applications with seamless user experiences.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card p-8 rounded-lg">
+                    <div class="text-neon text-4xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cloud Hosting</h3>
+                    <p class="text-gray-300">Scalable, secure cloud infrastructure with 99.9% uptime guarantee.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card p-8 rounded-lg">
+                    <div class="text-neon text-4xl mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Software Solutions</h3>
+                    <p class="text-gray-300">Custom software tailored to your business needs and workflows.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card p-8 rounded-lg">
+                    <div class="text-neon text-4xl mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hardware Services</h3>
+                    <p class="text-gray-300">Complete hardware solutions including maintenance and upgrades.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card p-8 rounded-lg">
+                    <div class="text-neon text-4xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">IT Consulting</h3>
+                    <p class="text-gray-300">Strategic technology planning and digital transformation guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-4xl font-bold mb-6 text-neon">ABOUT SPACYFIRE</h2>
+                    <p class="text-gray-300 mb-4">Founded in 2015, SpacyFire has been at the forefront of technological innovation, helping businesses of all sizes navigate the digital landscape.</p>
+                    <p class="text-gray-300 mb-4">Our team of experts combines technical excellence with creative problem-solving to deliver solutions that drive real business results.</p>
+                    <p class="text-gray-300">We believe in pushing boundaries, challenging conventions, and creating technology that doesn't just work—it excels.</p>
+                    <div class="mt-8 flex space-x-4">
+                        <div class="text-center">
+                            <div class="text-neon text-3xl font-bold">150+</div>
+                            <div class="text-gray-400">Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-neon text-3xl font-bold">98%</div>
+                            <div class="text-gray-400">Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-neon text-3xl font-bold">24/7</div>
+                            <div class="text-gray-400">Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Team" class="rounded-lg">
+                        <div class="absolute -inset-2 border-2 border-neon rounded-lg opacity-50"></div>
+                        <div class="absolute -inset-4 border-2 border-neon rounded-lg opacity-30"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 text-neon">GET IN TOUCH</h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Ready to ignite your project? Contact us today for a free consultation.</p>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h3 class="text-2xl font-bold mb-6 text-neon">CONTACT INFO</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-neon text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">HEADQUARTERS</h4>
+                                <p class="text-gray-300">123 Tech Boulevard, Silicon Valley, CA 94025</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-neon text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">PHONE</h4>
+                                <p class="text-gray-300">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-neon text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">EMAIL</h4>
+                                <p class="text-gray-300">contact@spacyfire.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mt-12 mb-6 text-neon">FOLLOW US</h3>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-neon hover:text-neon-light text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-neon hover:text-neon-light text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-neon hover:text-neon-light text-2xl"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-neon hover:text-neon-light text-2xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-black p-8 rounded-lg border border-neon">
+                        <div class="mb-6">
+                            <label for="name" class="block text-neon mb-2">YOUR NAME</label>
+                            <input type="text" id="name" class="w-full bg-gray-900 border-b border-neon focus:outline-none focus:border-neon-light py-2 px-1 text-white">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-neon mb-2">EMAIL ADDRESS</label>
+                            <input type="email" id="email" class="w-full bg-gray-900 border-b border-neon focus:outline-none focus:border-neon-light py-2 px-1 text-white">
+                        </div>
+                        <div class="mb-6">
+                            <label for="service" class="block text-neon mb-2">SERVICE INTEREST</label>
+                            <select id="service" class="w-full bg-gray-900 border-b border-neon focus:outline-none focus:border-neon-light py-2 px-1 text-white">
+                                <option value="">Select a service</option>
+                                <option value="web">Web Development</option>
+                                <option value="app">App Development</option>
+                                <option value="cloud">Cloud Hosting</option>
+                                <option value="software">Software Solutions</option>
+                                <option value="hardware">Hardware Services</option>
+                                <option value="consulting">IT Consulting</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-neon mb-2">MESSAGE</label>
+                            <textarea id="message" rows="4" class="w-full bg-gray-900 border-b border-neon focus:outline-none focus:border-neon-light py-2 px-1 text-white"></textarea>
+                        </div>
+                        <button type="submit" class="bg-neon hover:bg-neon-dark text-black font-bold py-3 px-8 rounded-full transition duration-300 w-full">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-neon">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-fire text-neon text-2xl"></i>
+                        <span class="text-neon text-2xl font-bold">SPACYFIRE</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Igniting digital transformation</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-400 hover:text-neon transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-neon transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-neon transition">Careers</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 SpacyFire Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will contact you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
