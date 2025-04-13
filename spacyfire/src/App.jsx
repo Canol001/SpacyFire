@@ -118,9 +118,10 @@ function App() {
         <nav className="fixed top-0 left-0 w-full bg-slate-800 bg-opacity-95 backdrop-blur-sm z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <a href="#home" className="text-2xl font-extrabold tracking-tight">
-                Spacy Fire
-              </a>
+            <div className="flex items-center space-x-2">
+                <i className="fas fa-fire text-neon text-2xl"></i>
+                <span className="text-neon text-2xl font-bold">SPACYFIRE</span>
+            </div>
               <div className="hidden md:flex space-x-8">
                 <a href="#home" className="text-slate-300 hover:text-cyan-500 font-medium transition">
                   Home
@@ -286,7 +287,7 @@ function App() {
               {
                 title: 'Cybersecurity',
                 desc: '> Protect with <span class="text-cyan-600">advanced</span> security protocols.',
-                img: '/images/cybersecurity.jpg',
+                img: '/images/cloud.jpg',
                 reverse: false,
               },
               {
