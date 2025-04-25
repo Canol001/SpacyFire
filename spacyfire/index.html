@@ -12,7 +12,10 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; }
-  
+    html, body {
+        overscroll-behavior-y: contain; /* blocks native pull-to-refresh */
+      }
+      
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -43,6 +46,10 @@
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
+    <div id="custom-loader" style="display:none; text-align:center; padding:1rem;">
+        🔄 Refreshing...
+      </div>
+      
   <!-- Navbar -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-0 translate-y-0 transition-all duration-300 ease-in-out">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
@@ -474,9 +481,34 @@
       toggleMenu(false);
     });
   });
+
+
+let startY = 0;
+let isPulling = false;
+
+document.addEventListener("touchstart", (e) => {
+  if (window.scrollY === 0) {
+    startY = e.touches[0].clientY;
+  }
+});
+
+document.addEventListener("touchmove", (e) => {
+  const currentY = e.touches[0].clientY;
+  if (window.scrollY === 0 && currentY - startY > 50) {
+    isPulling = true;
+    // Show custom loader here
+    document.getElementById("custom-loader").style.display = "block";
+  }
+});
+
+document.addEventListener("touchend", () => {
+  if (isPulling) {
+    isPulling = false;
+    // Perform refresh logic here
+    location.reload(); // or fetch new data
+  }
+});
+
 </script>
-
-
-
 </body>
 </html>
