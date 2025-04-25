@@ -170,78 +170,15 @@
 </section>
 
 
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-slate-100 text-slate-900">
+    <section id="services" class="py-20 bg-slate-100 text-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">Our <span class="text-cyan-600">Expertise</span></h2>
-      <!-- Service 1 -->
-      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 fade-in">
-        <img src="/images/main.svg" alt="Web Development" class="w-full md:w-1/2 rounded-lg shadow-md">
-        <div class="w-full md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-3">Web Development</h3>
-          <p class="text-slate-600 font-mono mb-4">
-            > Develop <span class="text-cyan-600">responsive</span> and <span class="text-cyan-600">SEO-optimized</span> websites.
-          </p>
-          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
-        </div>
-      </div>
-      <!-- Service 2 -->
-      <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-12 fade-in">
-        <img src="/images/main.svg" alt="Mobile Apps" class="w-full md:w-1/2 rounded-lg shadow-md">
-        <div class="w-full md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-3">Mobile Apps</h3>
-          <p class="text-slate-600 font-mono mb-4">
-            > Craft <span class="text-cyan-600">native</span> apps for iOS and Android.
-          </p>
-          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
-        </div>
-      </div>
-      <!-- Service 3 -->
-      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 fade-in">
-        <img src="https://images.pexels.com/photos/326501/pexels-photo-326501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="UI/UX Design" class="w-full md:w-1/2 rounded-lg shadow-md">
-        <div class="w-full md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-3">UI/UX Design</h3>
-          <p class="text-slate-600 font-mono mb-4">
-            > Design <span class="text-cyan-600">user-centric</span> interfaces.
-          </p>
-          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
-        </div>
-      </div>
-      <!-- Service 4 -->
-      <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-12 fade-in">
-        <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Cloud Solutions" class="w-full md:w-1/2 rounded-lg shadow-md">
-        <div class="w-full md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-3">Cloud Solutions</h3>
-          <p class="text-slate-600 font-mono mb-4">
-            > Scale with <span class="text-cyan-600">secure</span> cloud infrastructure.
-          </p>
-          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
-        </div>
-      </div>
-      <!-- Service 5 -->
-      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 fade-in">
-        <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Cybersecurity" class="w-full md:w-1/2 rounded-lg shadow-md">
-        <div class="w-full md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-3">Cybersecurity</h3>
-          <p class="text-slate-600 font-mono mb-4">
-            > Protect with <span class="text-cyan-600">advanced</span> security protocols.
-          </p>
-          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
-        </div>
-      </div>
-      <!-- Service 6 -->
-      <div class="flex flex-col md:flex-row-reverse items-center gap-8 fade-in">
-        <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Digital Marketing" class="w-full md:w-1/2 rounded-lg shadow-md">
-        <div class="w-full md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-3">Digital Marketing</h3>
-          <p class="text-slate-600 font-mono mb-4">
-            > Boost with <span class="text-cyan-600">targeted</span> campaigns.
-          </p>
-          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
-        </div>
-      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">
+        Our <span class="text-cyan-600">Expertise</span>
+      </h2>
+      <div id="services-container"></div>
     </div>
   </section>
+  
 
   <!-- Templates Section -->
   <section id="products" class="py-20 bg-white">
@@ -473,7 +410,8 @@
     </div>
   </div>
 </footer>
-
+<script type="module" src="/src/servicesData.js"></script>
+<script type="module" src="/src/renderServices.js"></script>
 <script>
   const navbar = document.getElementById('navbar');
   const mobileBtn = document.getElementById('mobile-menu-btn');
