@@ -1,33 +1,544 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpacyFire | Cutting-Edge Tech Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        neon: {
-                            DEFAULT: '#39FF14',
-                            light: '#6AFF52',
-                            dark: '#00CC00'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spacy Fire: Premium digital solutions and website templates.">
+  <title>Spacy Fire - Digital Excellence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- font awesome link below -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; }
+  
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
     
-    <style>
-        
-    </style>
+    .mobile-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    body.no-scroll {
+      overflow: hidden;
+    }
+    
+  </style>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-0 translate-y-0 transition-all duration-300 ease-in-out">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="/images/logo.svg" alt="SpacyFire Logo" class="h-10 w-auto">
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-10">
+        <a href="#home"      class="text-gray-800 hover:text-cyan-600 font-semibold transition transform hover:scale-105">Home</a>
+        <a href="#services"  class="text-gray-800 hover:text-cyan-600 font-semibold transition transform hover:scale-105">Services</a>
+        <a href="#products" class="text-gray-800 hover:text-cyan-600 font-semibold transition transform hover:scale-105">Products</a>
+        <a href="#about"     class="text-gray-800 hover:text-cyan-600 font-semibold transition transform hover:scale-105">About</a>
+        <a href="#contact"   class="text-gray-800 hover:text-cyan-600 font-semibold transition transform hover:scale-105">Contact</a>
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:block">
+        <a href="#contact"
+           class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition transform hover:scale-105">
+          Connect Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+<div class="md:hidden">
+  <button id="mobile-menu-btn" class="text-gray-800 focus:outline-none">
+    <!-- Hamburger Icon -->
+    <svg id="menu-icon" class="w-7 h-7 block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+    <!-- Close Icon -->
+    <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+
+  
+</nav>
+<!-- Mobile Menu Fullscreen -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-40 flex flex-col items-center justify-center space-y-6 transform -translate-y-full opacity-0 transition-all duration-500 ease-in-out md:hidden">
+  <a href="#home"      class="text-gray-800 text-xl font-medium hover:text-cyan-600">Home</a>
+  <a href="#services"  class="text-gray-800 text-xl font-medium hover:text-cyan-600">Services</a>
+  <a href="#products" class="text-gray-800 text-xl font-medium hover:text-cyan-600">Products</a>
+  <a href="#about"     class="text-gray-800 text-xl font-medium hover:text-cyan-600">About</a>
+  <a href="#contact"   class="text-gray-800 text-xl font-medium hover:text-cyan-600">Contact</a>
+  <a href="#contact"
+    class="bg-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-cyan-600 transition">
+    Connect Now
+  </a>
+</div>
+
+
+
+<!-- Hero Section -->
+<section id="home" class="min-h-screen bg-white pt-32 px-4 sm:px-6 lg:px-8 text-gray-900 relative overflow-hidden">
+
+  <!-- Left Decorative Image (Large screens only) -->
+  <img 
+    src="/images/left-blob.png" 
+    alt=""
+    class="hidden lg:block absolute top-0 left-0 h-full w-auto max-w-xs z-0 opacity-40 object-cover">
+
+  <!-- Right Decorative Image (Large screens only) -->
+  <img 
+    src="/images/left-blob.png" 
+    alt="" 
+    class="hidden lg:block absolute top-0 right-0 h-full w-auto max-w-xs z-0 opacity-40 object-cover rotate-180">
+
+  <!-- Hero Image for small screens (above text) -->
+  <div class="block lg:hidden pt-8">
+    <img 
+      src="/images/main.svg" 
+      alt="Hero Illustration" 
+      class="mx-auto w-3/4 sm:w-2/3 h-auto drop-shadow-xl rounded-lg"
+    >
+  </div>
+
+  <!-- Hero Content -->
+  <div class="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+
+    <span class="inline-block px-4 py-1 rounded-full text-sm font-medium bg-cyan-100 text-cyan-700 border border-cyan-300">
+      🚀 Launch Smarter with SpacyFire
+    </span>
+
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900">
+      Fuel Your Brand with <br>
+      <span class="bg-gradient-to-r from-cyan-500 to-cyan-700 text-transparent bg-clip-text">Custom Tech Solutions</span>
+    </h1>
+
+    <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+      We deliver <span class="text-cyan-600 font-semibold">websites</span>, <span class="text-cyan-600 font-semibold">apps</span>, and 
+      <span class="text-cyan-600 font-semibold">digital tools</span> that launch your business forward — fast and beautifully.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 pt-4">
+      <a href="#services"
+        class="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-700 text-white font-semibold shadow hover:scale-105 hover:shadow-cyan-200 transition-all duration-300">
+        Discover Services
+      </a>
+      <a href="#products"
+        class="px-8 py-3 rounded-full border border-cyan-500 text-cyan-600 font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300">
+        Browse Products
+      </a>
+    </div>
+
+    <!-- Hero Image for large screens -->
+    <div class="hidden lg:block pt-12">
+      <img 
+        src="/images/main.svg" 
+        alt="Hero Illustration" 
+        class="mx-auto w-3/4 md:w-1/2 lg:w-2/3 h-auto drop-shadow-xl rounded-lg"
+      >
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-slate-100 text-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">Our <span class="text-cyan-600">Expertise</span></h2>
+      <!-- Service 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 fade-in">
+        <img src="/images/main.svg" alt="Web Development" class="w-full md:w-1/2 rounded-lg shadow-md">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-3">Web Development</h3>
+          <p class="text-slate-600 font-mono mb-4">
+            > Develop <span class="text-cyan-600">responsive</span> and <span class="text-cyan-600">SEO-optimized</span> websites.
+          </p>
+          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-12 fade-in">
+        <img src="/images/main.svg" alt="Mobile Apps" class="w-full md:w-1/2 rounded-lg shadow-md">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-3">Mobile Apps</h3>
+          <p class="text-slate-600 font-mono mb-4">
+            > Craft <span class="text-cyan-600">native</span> apps for iOS and Android.
+          </p>
+          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
+        </div>
+      </div>
+      <!-- Service 3 -->
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 fade-in">
+        <img src="https://images.pexels.com/photos/326501/pexels-photo-326501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="UI/UX Design" class="w-full md:w-1/2 rounded-lg shadow-md">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-3">UI/UX Design</h3>
+          <p class="text-slate-600 font-mono mb-4">
+            > Design <span class="text-cyan-600">user-centric</span> interfaces.
+          </p>
+          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
+        </div>
+      </div>
+      <!-- Service 4 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 mb-12 fade-in">
+        <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Cloud Solutions" class="w-full md:w-1/2 rounded-lg shadow-md">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-3">Cloud Solutions</h3>
+          <p class="text-slate-600 font-mono mb-4">
+            > Scale with <span class="text-cyan-600">secure</span> cloud infrastructure.
+          </p>
+          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
+        </div>
+      </div>
+      <!-- Service 5 -->
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-12 fade-in">
+        <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Cybersecurity" class="w-full md:w-1/2 rounded-lg shadow-md">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-3">Cybersecurity</h3>
+          <p class="text-slate-600 font-mono mb-4">
+            > Protect with <span class="text-cyan-600">advanced</span> security protocols.
+          </p>
+          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
+        </div>
+      </div>
+      <!-- Service 6 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 fade-in">
+        <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Digital Marketing" class="w-full md:w-1/2 rounded-lg shadow-md">
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-3">Digital Marketing</h3>
+          <p class="text-slate-600 font-mono mb-4">
+            > Boost with <span class="text-cyan-600">targeted</span> campaigns.
+          </p>
+          <a href="#contact" class="text-cyan-600 hover:text-cyan-500 font-semibold">Request a Quote →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Templates Section -->
+  <section id="products" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">
+        Our <span class="text-cyan-600">Products</span>
+      </h2>
+      <div class="flex flex-wrap gap-4 mb-10 justify-center">
+        <button data-filter="all" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">All</button>
+        <button data-filter="portfolio" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">Portfolio</button>
+        <button data-filter="business" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">Business</button>
+        <button data-filter="landing" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">Landing Page</button>
+        <input type="text" id="template-search" class="bg-gray-100 px-4 py-2 rounded-full text-gray-800 border border-gray-300 focus:ring-2 focus:ring-cyan-500 w-full sm:w-64" placeholder="Search templates...">
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-auto">
+        <div class="template-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-category="portfolio">
+          <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Portfolio Template" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Creative Portfolio</h3>
+          <p class="text-gray-600 text-sm mb-4">Showcase your work with elegance.</p>
+          <div class="text-sm text-gray-500 mb-4">Tags: <span class="code-snippet">Portfolio</span> <span class="code-snippet">Creative</span></div>
+          <div class="flex gap-4">
+            <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition">Live Preview</a>
+            <a href="#" class="border-2 border-cyan-500 text-cyan-600 px-4 py-2 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition">Download</a>
+          </div>
+        </div>
+        <div class="template-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-category="business">
+          <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Business Template" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Corporate Hub</h3>
+          <p class="text-gray-600 text-sm mb-4">Professional site for enterprises.</p>
+          <div class="text-sm text-gray-500 mb-4">Tags: <span class="code-snippet">Business</span> <span class="code-snippet">Corporate</span></div>
+          <div class="flex gap-4">
+            <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition">Live Preview</a>
+            <a href="#" class="border-2 border-cyan-500 text-cyan-600 px-4 py-2 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition">Download</a>
+          </div>
+        </div>
+        <div class="template-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-category="landing">
+          <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Landing Template" class="w-full h-44 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Startup Landing</h3>
+          <p class="text-gray-600 text-sm mb-4">Launch products with impact.</p>
+          <div class="text-sm text-gray-500 mb-4">Tags: <span class="code-snippet">Landing Page</span> <span class="code-snippet">Startup</span></div>
+          <div class="flex gap-4">
+            <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition">Live Preview</a>
+            <a href="#" class="border-2 border-cyan-500 text-cyan-600 px-4 py-2 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">
+        What Our <span class="text-cyan-600">Clients Say</span>
+      </h2>
+  
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Testimonial Card -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-cyan-100 transition-all duration-300">
+          <div class="flex flex-col items-center text-center">
+            <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Client" class="w-16 h-16 rounded-full mb-4 border-2 border-cyan-600 shadow-sm">
+            <p class="text-gray-700 text-sm mb-4">"Spacy Fire transformed our digital presence with stunning templates."</p>
+            <p class="text-cyan-600 font-semibold">– Jane Doe, TechCorp</p>
+          </div>
+        </div>
+  
+        <!-- Testimonial Card -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-cyan-100 transition-all duration-300">
+          <div class="flex flex-col items-center text-center">
+            <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Client" class="w-16 h-16 rounded-full mb-4 border-2 border-cyan-600 shadow-sm">
+            <p class="text-gray-700 text-sm mb-4">"Their cybersecurity solutions are top-notch and reliable."</p>
+            <p class="text-cyan-600 font-semibold">– John Smith, DataSecure</p>
+          </div>
+        </div>
+  
+        <!-- Testimonial Card -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-cyan-100 transition-all duration-300">
+          <div class="flex flex-col items-center text-center">
+            <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Client" class="w-16 h-16 rounded-full mb-4 border-2 border-cyan-600 shadow-sm">
+            <p class="text-gray-700 text-sm mb-4">"Fast, professional, and innovative mobile apps!"</p>
+            <p class="text-cyan-600 font-semibold">– Alex Lee, StartupX</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-slate-100 text-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">Our <span class="text-cyan-600">Story</span></h2>
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Our Team" class="w-full rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2 space-y-8">
+          <div class="fade-in">
+            <h3 class="text-xl font-semibold mb-2">2024: Founded</h3>
+            <p class="text-slate-600 text-sm">Spacy Fire began with a mission to innovate digital solutions.</p>
+          </div>
+          <div class="fade-in">
+            <h3 class="text-xl font-semibold mb-2">2025: Global Reach</h3>
+            <p class="text-slate-600 text-sm">Expanded to serve 200+ clients worldwide.</p>
+          </div>
+          <div class="fade-in">
+            <h3 class="text-xl font-semibold mb-2">2025: Template Hub</h3>
+            <p class="text-slate-600 text-sm">Launched premium templates for all industries.</p>
+          </div>
+          <div class="flex gap-4">
+            <span class="bg-amber-500 text-slate-900 px-3 py-1 rounded-full text-sm font-semibold">ISO Certified</span>
+            <span class="bg-amber-500 text-slate-900 px-3 py-1 rounded-full text-sm font-semibold">Award-Winning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-2 gap-12">
+      <div class="mb-12 lg:mb-0 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8">Let’s <span class="text-cyan-500">Collaborate</span></h2>
+        <form class="space-y-6 max-w-md mx-auto lg:mx-0">
+          <input type="text" id="name" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-md text-white focus:ring-2 focus:ring-cyan-500" placeholder="Name" required>
+          <input type="email" id="email" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-md text-white focus:ring-2 focus:ring-cyan-500" placeholder="Email" required>
+          <textarea id="message" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-md text-white focus:ring-2 focus:ring-cyan-500" rows="5" placeholder="Your Project Details" required></textarea>
+          <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">Send Message</button>
+        </form>
+      </div>
+      <div class="fade-in">
+        <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Office" class="w-full rounded-lg shadow-md mb-6">
+        <div class="text-slate-300">
+          <p>Email: <a href="mailto:canolowana6@gmail.com" class="hover:text-cyan-500">info@spacyfire.com</a></p>
+          <p>Phone: +254 790 502 670</p>
+          <p class="mt-4">Maseno, Kisumu Kenya.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spacy Fire Case Study / Trusted Section -->
+<section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 px-6 sm:px-12 rounded-3xl shadow-xl mx-4 my-12 overflow-hidden">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Logo or Brand Visual -->
+    <div class="flex justify-center md:justify-start">
+      <img src="/images/logo.svg" alt="Spacy Fire Logo" class="w-64 h-auto">
+    </div>
+    
+    <!-- Textual Content -->
+    <div>
+      <span class="inline-block bg-cyan-600/10 text-cyan-400 text-sm font-semibold px-4 py-1 rounded-full mb-4">Empowering Innovation</span>
+      <h2 class="text-white text-3xl sm:text-4xl font-extrabold mb-6 leading-tight">Smart Solutions for the Digital-First Era</h2>
+      <p class="text-slate-300 mb-6 text-base sm:text-lg">
+        At Spacy Fire, we eliminate the clutter in your workflows. Our tech-driven services and integrations bring ease, speed, and future-proof efficiency to businesses and startups alike.
+      </p>
+
+      <ul class="space-y-4 text-slate-200 text-sm sm:text-base">
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 8h10M7 12h8m-8 4h6M5 20h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+          <span><strong>150+ Businesses Served</strong> – Across industries from retail to SaaS, we deliver secure, tailored integrations.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 12h2M12 21C6.477 21 2 16.523 2 11S6.477 1 12 1s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          <span><strong>99.9% Uptime</strong> – Bulletproof backend and monitoring ensure your business never skips a beat.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+          <span><strong>3x Faster Launch</strong> – We help startups go live in record time with ready solutions and scalable infrastructure.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-slate-900 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-16">
+    <!-- SpacyFire Intro -->
+    <div class="flex flex-col space-y-4">
+      <!-- <div class="flex items-center space-x-3">
+        <i class="fas fa-fire text-cyan-400 text-4xl"></i>
+        <span class="text-cyan-400 text-4xl font-extrabold tracking-tight">SPACYFIRE</span>
+      </div> -->
+      <div class="flex items-center space-x-2">
+        <img src="/images/logo.svg" alt="SpacyFire Logo" class="h-10 w-auto">
+      </div>
+      <p class="text-slate-400 text-lg">
+        Empowering businesses with innovative digital solutions since 2024. Let's shape the future together.
+      </p>
+      <div class="flex space-x-6">
+        <a href="https://twitter.com" class="text-slate-400 hover:text-cyan-500 transition"><i class="fab fa-twitter text-2xl"></i></a>
+        <a href="https://www.linkedin.com/company/spacyfire/" class="text-slate-400 hover:text-cyan-500 transition"><i class="fab fa-linkedin-in text-2xl"></i></a>
+        <a href="https://github.com" class="text-slate-400 hover:text-cyan-500 transition"><i class="fab fa-github text-2xl"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col space-y-4">
+      <h4 class="text-2xl font-semibold text-white">Quick Links</h4>
+      <ul class="space-y-3 text-slate-400 text-lg">
+        <li><a href="#home" class="hover:text-cyan-500 transition">Home</a></li>
+        <li><a href="#services" class="hover:text-cyan-500 transition">Services</a></li>
+        <li><a href="#templates" class="hover:text-cyan-500 transition">Templates</a></li>
+        <li><a href="#about" class="hover:text-cyan-500 transition">About</a></li>
+        <li><a href="#contact" class="hover:text-cyan-500 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="flex flex-col space-y-4">
+      <h4 class="text-2xl font-semibold text-white">Subscribe to our Newsletter</h4>
+      <p class="text-slate-400 text-lg">Get the latest updates, tips, and exclusive offers delivered directly to your inbox.</p>
+      <form class="flex w-full">
+        <input type="email" placeholder="Your Email" class="w-full px-6 py-3 bg-slate-800 border border-slate-700 rounded-l-md text-white focus:ring-2 focus:ring-cyan-500">
+        <button type="submit" class="bg-cyan-500 text-slate-900 px-6 py-3 rounded-r-md hover:bg-cyan-400 font-semibold transition">Join</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="mt-16 border-t border-slate-700 pt-8 text-center text-slate-400 text-lg">
+    <p>© 2025 Spacy Fire. All rights reserved.</p>
+    <div class="mt-4 text-slate-500">
+      <a href="#privacy-policy" class="hover:text-cyan-500 transition">Privacy Policy</a> | <a href="#terms-of-service" class="hover:text-cyan-500 transition">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const navLinks = mobileMenu.querySelectorAll('a');
+
+  let lastScrollY = window.scrollY;
+
+  // Scroll behavior: show navbar on scroll up, hide on scroll down
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 50) {
+      if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.backgroundColor = 'rgba(255,255,255,0.8)';
+      } else {
+        // Scrolling down - hide navbar
+        navbar.style.transform = 'translateY(-100%)';
+      }
+    } else {
+      // Near top - show transparent navbar
+      navbar.style.transform = 'translateY(0)';
+      navbar.style.backgroundColor = 'transparent';
+      navbar.style.backdropFilter = 'blur(0)';
+    }
+
+    lastScrollY = currentScrollY;
+  });
+
+  // Toggle mobile menu
+  function toggleMenu(show) {
+    if (show) {
+      mobileMenu.classList.remove('-translate-y-full', 'opacity-0');
+      mobileMenu.classList.add('translate-y-0', 'opacity-100');
+      document.body.classList.add('overflow-hidden');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+      mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+      document.body.classList.remove('overflow-hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  }
+
+  mobileBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('translate-y-0');
+    toggleMenu(!isOpen);
+  });
+
+  // Close menu on nav link click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      toggleMenu(false);
+    });
+  });
+</script>
+
+
+
+</body>
 </html>
