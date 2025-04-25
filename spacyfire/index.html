@@ -46,19 +46,19 @@
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
-    
+<!-- Full-Screen Loader Overlay -->
 <div id="custom-loader" 
-class="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center hidden">
-<!-- Spinner -->
-<svg class="animate-spin h-16 w-16 text-cyan-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
-</svg>
-<!-- Label -->
-<p class="mt-4 text-gray-800 text-lg font-medium">Refreshing…</p>
+     class="fixed inset-0 h-screen bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center flex-col hidden">
+  <!-- Spinner -->
+  <svg class="animate-spin h-16 w-16 text-cyan-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+  </svg>
+  <!-- Label -->
+  <p class="mt-4 text-gray-800 text-lg font-medium">Refreshing…</p>
 </div>
 
-      
+
   <!-- Navbar -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-0 translate-y-0 transition-all duration-300 ease-in-out">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-4">
@@ -126,21 +126,21 @@ class="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex flex-col items-cente
 
   <!-- Left Decorative Image (Large screens only) -->
   <img 
-    src="/images/left-blob.png" 
+    src="/images/left-blob.png"
     alt=""
     class="hidden lg:block absolute top-0 left-0 h-full w-auto max-w-xs z-0 opacity-40 object-cover">
 
   <!-- Right Decorative Image (Large screens only) -->
   <img 
-    src="/images/left-blob.png" 
+    src="/images/left-blob.png"
     alt="" 
     class="hidden lg:block absolute top-0 right-0 h-full w-auto max-w-xs z-0 opacity-40 object-cover rotate-180">
 
   <!-- Hero Image for small screens (above text) -->
   <div class="block lg:hidden pt-8">
     <img 
-      src="/images/main.svg" 
-      alt="Hero Illustration" 
+      src="/images/main.svg"
+      alt="Hero Illustration"
       class="mx-auto w-3/4 sm:w-2/3 h-auto drop-shadow-xl rounded-lg"
     >
   </div>
@@ -196,50 +196,77 @@ class="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex flex-col items-cente
   </section>
   
 
-  <!-- Templates Section -->
-  <section id="products" class="py-20 bg-white">
+  <!-- Products Section -->
+<section id="products" class="py-20 bg-white text-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">
         Our <span class="text-cyan-600">Products</span>
       </h2>
-      <div class="flex flex-wrap gap-4 mb-10 justify-center">
-        <button data-filter="all" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">All</button>
-        <button data-filter="portfolio" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">Portfolio</button>
-        <button data-filter="business" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">Business</button>
-        <button data-filter="landing" class="filter-btn bg-gray-200 px-4 py-2 rounded-full text-gray-700 hover:bg-cyan-500 hover:text-white font-semibold transition">Landing Page</button>
-        <input type="text" id="template-search" class="bg-gray-100 px-4 py-2 rounded-full text-gray-800 border border-gray-300 focus:ring-2 focus:ring-cyan-500 w-full sm:w-64" placeholder="Search templates...">
-      </div>
+  
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-auto">
-        <div class="template-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-category="portfolio">
-          <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Portfolio Template" class="w-full h-40 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-semibold mb-2 text-gray-800">Creative Portfolio</h3>
-          <p class="text-gray-600 text-sm mb-4">Showcase your work with elegance.</p>
-          <div class="text-sm text-gray-500 mb-4">Tags: <span class="code-snippet">Portfolio</span> <span class="code-snippet">Creative</span></div>
-          <div class="flex gap-4">
-            <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition">Live Preview</a>
-            <a href="#" class="border-2 border-cyan-500 text-cyan-600 px-4 py-2 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition">Download</a>
-          </div>
+        
+        <!-- Product: FormJet -->
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <img 
+            src="/images/fj-logo.jpeg"
+            alt="FormJet Logo"
+            class="w-full h-40 object-cover rounded-md mb-4"
+          >
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">FormJet</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Your form handler that delivers every submission right to your inbox—no backend required.
+          </p>
+          <a
+            href="https://formjet.io"
+            class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition block text-center"
+            target="_blank"
+          >
+            Visit FormJet
+          </a>
         </div>
-        <div class="template-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-category="business">
-          <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Business Template" class="w-full h-48 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-semibold mb-2 text-gray-800">Corporate Hub</h3>
-          <p class="text-gray-600 text-sm mb-4">Professional site for enterprises.</p>
-          <div class="text-sm text-gray-500 mb-4">Tags: <span class="code-snippet">Business</span> <span class="code-snippet">Corporate</span></div>
-          <div class="flex gap-4">
-            <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition">Live Preview</a>
-            <a href="#" class="border-2 border-cyan-500 text-cyan-600 px-4 py-2 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition">Download</a>
-          </div>
+  
+        <!-- Product: Ctrl C -->
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <img 
+            src="https://via.placeholder.com/600x400?text=Ctrl+C" 
+            alt="Ctrl C Logo" 
+            class="w-full h-40 object-cover rounded-md mb-4"
+          >
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Ctrl C</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            A productivity extension to streamline copy-paste workflows across your favorite apps.
+          </p>
+          <a 
+            href="https://ctrlc.app" 
+            class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition block text-center"
+            target="_blank"
+          >
+            Visit Ctrl C
+          </a>
         </div>
-        <div class="template-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1" data-category="landing">
-          <img src="https://wallpapers.com/images/hd/programming-hd-2eo94s73hxhwjcta.jpg" alt="Landing Template" class="w-full h-44 object-cover rounded-md mb-4">
-          <h3 class="text-xl font-semibold mb-2 text-gray-800">Startup Landing</h3>
-          <p class="text-gray-600 text-sm mb-4">Launch products with impact.</p>
-          <div class="text-sm text-gray-500 mb-4">Tags: <span class="code-snippet">Landing Page</span> <span class="code-snippet">Startup</span></div>
-          <div class="flex gap-4">
-            <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition">Live Preview</a>
-            <a href="#" class="border-2 border-cyan-500 text-cyan-600 px-4 py-2 rounded-full font-semibold hover:bg-cyan-500 hover:text-white transition">Download</a>
-          </div>
+  
+        <!-- Product: [Your Next Product] -->
+        <div class="product-card bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <img 
+            src="https://via.placeholder.com/600x400?text=Product+Name" 
+            alt="Product Name Logo" 
+            class="w-full h-40 object-cover rounded-md mb-4"
+          >
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Product Name</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Brief one-line description of what your product does and why it’s awesome.
+          </p>
+          <a 
+            href="https://example.com" 
+            class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition block text-center"
+            target="_blank"
+          >
+            Visit Product
+          </a>
         </div>
+  
+        <!-- Add more product cards below as needed -->
+        
       </div>
     </div>
   </section>
@@ -493,31 +520,4 @@ class="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex flex-col items-cente
 
 
 let startY = 0;
-let isPulling = false;
-
-document.addEventListener("touchstart", (e) => {
-  if (window.scrollY === 0) {
-    startY = e.touches[0].clientY;
-  }
-});
-
-document.addEventListener("touchmove", (e) => {
-  const currentY = e.touches[0].clientY;
-  if (window.scrollY === 0 && currentY - startY > 50) {
-    isPulling = true;
-    // Show custom loader here
-    document.getElementById("custom-loader").style.display = "block";
-  }
-});
-
-document.addEventListener("touchend", () => {
-  if (isPulling) {
-    isPulling = false;
-    // Perform refresh logic here
-    location.reload(); // or fetch new data
-  }
-});
-
-</script>
-</body>
-</html>
+let isPulling =
