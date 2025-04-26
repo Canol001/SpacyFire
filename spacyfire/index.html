@@ -217,7 +217,7 @@
             Your form handler that delivers every submission right to your inbox—no backend required.
           </p>
           <a
-            href="https://formjet.io"
+            href="https://formjet.onrender.com"
             class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition block text-center"
             target="_blank"
           >
@@ -237,7 +237,7 @@
             A productivity extension to streamline copy-paste workflows across your favorite apps.
           </p>
           <a 
-            href="https://ctrlc.app" 
+            href="https://ctrl-c.onrender.com" 
             class="bg-cyan-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-cyan-400 transition block text-center"
             target="_blank"
           >
@@ -520,4 +520,31 @@
 
 
 let startY = 0;
-let isPulling =
+let isPulling = false;
+
+document.addEventListener("touchstart", (e) => {
+  if (window.scrollY === 0) {
+    startY = e.touches[0].clientY;
+  }
+});
+
+document.addEventListener("touchmove", (e) => {
+  const currentY = e.touches[0].clientY;
+  if (window.scrollY === 0 && currentY - startY > 50) {
+    isPulling = true;
+    // Show custom loader here
+    document.getElementById("custom-loader").style.display = "block";
+  }
+});
+
+document.addEventListener("touchend", () => {
+  if (isPulling) {
+    isPulling = false;
+    // Perform refresh logic here
+    location.reload(); // or fetch new data
+  }
+});
+
+</script>
+</body>
+</html>
